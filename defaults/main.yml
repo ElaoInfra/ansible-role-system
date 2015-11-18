@@ -6,3 +6,5 @@ elao_system_modprobe: []
 # Kernel parameters to configure
 elao_system_sysctl: []
 
+# Locales to configure
+elao_system_locale_gen: []

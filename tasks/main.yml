@@ -1,5 +1,8 @@
 ---
 
 - include: modules.yml
+  when: elao_system_modprobe|length
 - include: parameters.yml
-
+  when: elao_system_sysctl|length
+- include: locales.yml
+  when: elao_system_locale_gen|length
