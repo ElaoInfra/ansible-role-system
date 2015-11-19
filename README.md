@@ -30,11 +30,12 @@ dependencies:
 
 ## Role Variables
 
-| Name                     | Default | Type  | Description                              |
-| ------------------------ | ------- | ----- | ---------------------------------------- |
-| `elao_system_modprobe`   | []      | Array | Kernel modules to enable/disable         |
-| `elao_system_sysctl`     | []      | Array | Kernel parameters to configure           |
-| `elao_system_locale_gen` | []      | Array | Locales to configure                     |
+| Name                     | Default | Type   | Description                                   |
+| ------------------------ | ------- | ------ | --------------------------------------------- |
+| `elao_system_modprobe`   | []      | Array  | Kernel modules to enable/disable              |
+| `elao_system_sysctl`     | []      | Array  | Kernel parameters to configure                |
+| `elao_system_locale`     | nil     | String | Default locale, stored in /etc/default/locale |
+| `elao_system_locale_gen` | []      | Array  | Locales to configure                          |
 
 ### Configuration example
 
@@ -46,8 +47,13 @@ elao_system_sysctl:
 elao_system_modprobe:
   - name: ip_vs
 
+elao_system_locale: C.UTF-8
+
 elao_system_locale_gen:
   - name: fr_FR.UTF-8
+  - name: en_EN.UTF-8
+    state: absent
+
 ```
 
 ## Example playbook

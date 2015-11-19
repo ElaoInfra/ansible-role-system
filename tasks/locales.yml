@@ -5,3 +5,10 @@
     name:  "{{ item.name }}"
     state: "{{ item.state|default(omit) }}"
   with_items: elao_system_locale_gen
+
+- name: locales > Default locale.
+  lineinfile:
+    dest:   /etc/default/locale
+    regexp: "LANG="
+    line:   "LANG={{ elao_system_locale }}"
+  when: elao_system_locale

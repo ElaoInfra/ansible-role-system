@@ -5,4 +5,4 @@
 - include: parameters.yml
   when: elao_system_sysctl|length
 - include: locales.yml
-  when: elao_system_locale_gen|length
+  when: elao_system_locale_gen|length or elao_system_locale

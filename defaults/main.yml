@@ -8,3 +8,6 @@ elao_system_sysctl: []
 
 # Locales to configure
 elao_system_locale_gen: []
+
+# Default locale
+elao_system_locale: ~
